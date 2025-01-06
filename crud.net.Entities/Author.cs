@@ -1,6 +1,4 @@
-﻿using crud.net.Entities;
-
-namespace api_crud_net.Entities
+﻿namespace crud.net.Entities
 {
     public class Author
     {

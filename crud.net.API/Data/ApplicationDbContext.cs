@@ -1,4 +1,4 @@
-﻿using crud.net.Entities;
+﻿using crud.net.Entities.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace crud.net.API.Data

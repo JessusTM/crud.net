@@ -13,8 +13,11 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 builder.Services.AddOpenApi();
-builder.Services.AddScoped<BookService>();
+builder.Services.AddScoped<GenreRepository>();
+builder.Services.AddScoped<GenreService>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<BookService>();
+
 builder.Services.AddCors(option =>
 {
     option.AddPolicy("CorsPolicy", builder =>

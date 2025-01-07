@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crud.net.Entities", "crud.net.Entities\crud.net.Entities.csproj", "{1111506C-8B56-40CE-A949-CD88BF4D8BEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crud.net.API", "crud.net.API\crud.net.API.csproj", "{EE47B67E-2264-49B6-8341-9A8DC27C66A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crud.net.Client", "crud.net.Client\crud.net.Client.csproj", "{B6F6B1EA-9C9A-412F-A75F-B079998E913B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EE47B67E-2264-49B6-8341-9A8DC27C66A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE47B67E-2264-49B6-8341-9A8DC27C66A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE47B67E-2264-49B6-8341-9A8DC27C66A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F6B1EA-9C9A-412F-A75F-B079998E913B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F6B1EA-9C9A-412F-A75F-B079998E913B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F6B1EA-9C9A-412F-A75F-B079998E913B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F6B1EA-9C9A-412F-A75F-B079998E913B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

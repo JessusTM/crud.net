@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "crud.net.API\\crud.net.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "crud.net.Client\\crud.net.Client.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

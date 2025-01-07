@@ -36,7 +36,10 @@ namespace crud.net.API.Repositories
 
         public async Task<List<Book>> GetBooks()
         {
-            return await _context.Books.ToListAsync();
+            return await _context.Books
+                .Include(b => b.Genres)
+                .Include(b => b.Authors)
+                .ToListAsync();
         }
 
         public async Task<Book> UpdateBook(int id, Book book)

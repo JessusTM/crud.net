@@ -30,7 +30,7 @@ namespace crud.net.Entities.Domain
         [Required(ErrorMessage = "Stock es obligatorio")]
         public int Stock { get; set; }
 
-        public required List<Genre> Genres { get; set; }
-        public required List<Author> Authors { get; set; }
+        public required List<Genre> Genres { get; set; } = new List<Genre>();
+        public required List<Author> Authors { get; set; } = new List<Author>();
     }
 }

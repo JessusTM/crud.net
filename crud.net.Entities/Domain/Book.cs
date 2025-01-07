@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace crud.net.Entities
+namespace crud.net.Entities.Domain
 {
     public class Book
     {

@@ -1,4 +1,4 @@
-﻿namespace crud.net.Entities
+﻿namespace crud.net.Entities.Domain
 {
     public class Genre
     {

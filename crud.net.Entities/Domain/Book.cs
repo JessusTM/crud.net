@@ -8,29 +8,30 @@ namespace crud.net.Entities.Domain
         public int Id { get; set; }
 
         [Required(ErrorMessage = "ISBN es obligatorio.")]
-        public required string ISBN { get; set; }
+        public string ISBN { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Título es obligatorio.")]
-        public required string Title { get; set; }
-        [Required(ErrorMessage = "Autor es obligatorio.")]
-        public required string Author { get; set; }
-        [Required(ErrorMessage = "Descripción es obligatorio.")]
-        public required string Description { get; set; }
-        [Required(ErrorMessage = "Language es obligatorio.")]
-        public required string Language { get; set; }
-        [Required(ErrorMessage = "Año de publicación es obligatorio.")]
-        public required int PublicationYear { get; set; }
-        [Required(ErrorMessage = "Páginas es obligatorio.")]
-        public required int Pages { get; set; }
+        public string Title { get; set; } = string.Empty;
 
-        public byte[]? Image { get; set; }
-        public byte[]? File { get; set; }
-        public string? FileName { get; set; }
+        [Required(ErrorMessage = "Autor es obligatorio.")]
+        public string Author { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Descripción es obligatorio.")]
+        public string Description { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Language es obligatorio.")]
+        public string Language { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Año de publicación es obligatorio.")]
+        public int PublicationYear { get; set; }
+
+        [Required(ErrorMessage = "Páginas es obligatorio.")]
+        public int Pages { get; set; }
 
         [Required(ErrorMessage = "Stock es obligatorio")]
         public int Stock { get; set; }
 
-        public required List<Genre> Genres { get; set; } = new List<Genre>();
-        public required List<Author> Authors { get; set; } = new List<Author>();
+        public List<Genre> Genres { get; set; } = new List<Genre>();
+        public List<Author> Authors { get; set; } = new List<Author>();
     }
 }

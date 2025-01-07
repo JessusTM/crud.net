@@ -16,7 +16,7 @@ namespace crud.net.API.Repositories
 
         public async Task<Book> AddBook(Book book)
         {
-            _context.Books.Add(book);
+            await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
             return book;
         }
@@ -24,8 +24,6 @@ namespace crud.net.API.Repositories
         public async Task DeleteBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
-            if (book == null) throw new KeyNotFoundException($"Book with id {id} not found.");
-            
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();
         }
@@ -33,7 +31,6 @@ namespace crud.net.API.Repositories
         public async Task<Book> GetBookById(int id)
         {
             var book = await _context.Books.FindAsync(id);
-            if (book == null) throw new KeyNotFoundException($"Book with id {id} not found.");
             return book;
         }
 
@@ -45,8 +42,6 @@ namespace crud.net.API.Repositories
         public async Task<Book> UpdateBook(int id, Book book)
         {
             var foundBook = await _context.Books.FindAsync(id);
-            if (foundBook == null) throw new KeyNotFoundException($"Book with id {id} not found.");
-            
             _context.Entry(foundBook).CurrentValues.SetValues(book);
             await _context.SaveChangesAsync();
             return foundBook;

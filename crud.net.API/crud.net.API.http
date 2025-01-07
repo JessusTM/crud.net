@@ -60,3 +60,8 @@ Content-Type: application/json
 
 ### Delete a book by ID
 POST {{crud.net.API_HostAddress}}/api/Book/1
+
+  
+### Get all genres
+GET {{crud.net.API_HostAddress}}/api/genre
+Accept: application/json

@@ -1,6 +1,62 @@
 @crud.net.API_HostAddress = http://localhost:5244
 
-GET {{crud.net.API_HostAddress}}/weatherforecast/
+### Get all books
+GET {{crud.net.API_HostAddress}}/api/book
 Accept: application/json
 
-###
+### Get book by ID
+GET {{crud.net.API_HostAddress}}/api/book/1
+Accept: application/json
+
+### Create a new book
+POST {{crud.net.API_HostAddress}}/api/book
+Content-Type: application/json
+{
+  "ISBN": "978-0451524935",
+  "Title": "1984",
+  "Author": "George Orwell",
+  "Description": "Una novela distópica que describe un futuro totalitario.",
+  "Language": "Español",
+  "PublicationYear": 1949,
+  "Pages": 328,
+  "Stock": 20,
+  "Genres": [
+    { "Name": "Distopía" },
+    { "Name": "Política" }
+  ],
+  "Authors": [
+    { "Name": "George Orwell" }
+  ]
+}
+### Update an existing book by ID
+PUT {{crud.net.API_HostAddress}}/api/Book/1
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "ISBN": "978-3-16-148410-0",
+  "Title": "Introducción a C# (Actualizado)",
+  "Author": "John Doe",
+  "Description": "Un libro actualizado para aprender C#.",
+  "Language": "Español",
+  "PublicationYear": 2024,
+  "Pages": 500,
+  "Stock": 15,
+  "Genres": [
+    {
+      "Id": 1,
+      "Name": "Programación",
+      "Books": []
+    }
+  ],
+  "Authors": [
+    {
+      "Id": 1,
+      "Name": "John Doe",
+      "Books": []
+    }
+  ]
+}
+
+### Delete a book by ID
+POST {{crud.net.API_HostAddress}}/api/Book/1

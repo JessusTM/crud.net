@@ -26,7 +26,7 @@ namespace crud.net.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving data from the database: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"[BookController] Error retrieving data from the database: {ex.Message} | Inner: {ex.InnerException?.Message}");
             }
         }
 
@@ -40,7 +40,7 @@ namespace crud.net.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving data from the database: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"[BookController] Error retrieving data from the database: {ex.Message} | Inner: {ex.InnerException?.Message}");
             }
         }
 
@@ -50,11 +50,11 @@ namespace crud.net.API.Controllers
             try
             {
                 var response = await _bookService.AddBook(book);
-                return Ok(response);
+                return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error adding data to the database: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"[BookController] Error adding data to the database: {ex.Message} | Inner: {ex.InnerException?.Message}");
             }
         }
 
@@ -68,11 +68,11 @@ namespace crud.net.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating data in the database: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"[BookController] Error updating data in the database: {ex.Message} | Inner: {ex.InnerException?.Message}");
             }
         }
 
-        [HttpPost]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteBook(int id)
         {
             try
@@ -82,7 +82,7 @@ namespace crud.net.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting data from the database: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"[BookController] Error deleting data from the database: {ex.Message} | Inner: {ex.InnerException?.Message}");
             }
         }
     }

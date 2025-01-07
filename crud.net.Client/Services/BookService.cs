@@ -1,6 +1,5 @@
 ﻿using System.Net.Http.Json;
 using crud.net.Entities.Domain;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace crud.net.Client.Services
 {

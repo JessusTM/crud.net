@@ -1,0 +1,60 @@
+﻿@inject NavigationManager navigationManager;
+
+<EditForm Model="@book">
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+        <label for="ISBN" class="form-label">ISBN</label>
+        <InputText id="ISBN" class="form-control" @bind-Value="book.ISBN" />
+        <ValidationMessage For="(() => book.ISBN)"/>
+    </div>
+    <div class="mb-3">
+        <label for="Title" class="form-label">Título</label>
+        <InputText id="Title" class="form-control" @bind-Value="book.Title" />
+        <ValidationMessage For="(() => book.Title)" />
+    </div>
+    <div class="mb-3">
+        <label for="Author" class="form-label">Autor</label>
+        <InputText id="Author" class="form-control" @bind-Value="book.Author" />
+        <ValidationMessage For="(() => book.Author)" />
+    </div>
+    <div class="mb-3">
+        <label for="Description" class="form-label">Descripción</label>
+        <InputText id="Description" class="form-control" @bind-Value="book.Description" />
+        <ValidationMessage For="(() => book.Description)" />
+    </div>
+    <div class="mb-3">
+        <label for="Language" class="form-label">Idioma</label>
+        <InputText id="Language" class="form-control" @bind-Value="book.Language" />
+        <ValidationMessage For="(() => book.Language)" />
+    </div>
+    <div class="mb-3">
+        <label for="PublicationYear" class="form-label">Año de Publicación</label>
+        <InputNumber id="PublicationYear" class="form-control" @bind-Value="book.PublicationYear" />
+        <ValidationMessage For="(() => book.PublicationYear)" />
+    </div>
+    <div class="mb-3">
+        <label for="Pages" class="form-label">Páginas</label>
+        <InputNumber id="pages" class="form-control" @bind-Value="book.Pages" />
+        <ValidationMessage For="(() => book.Pages)" />
+    </div>
+    <div class="mb-3">
+        <label for="Stock" class="form-label">Stock</label>
+        <InputNumber id="Stock" class="form-control" @bind-Value="book.Stock" />
+        <ValidationMessage For="(() => book.Stock)" />
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-danger" @onclick="NavigateToBookList">Volver Atrás</button>
+    </div>
+</EditForm>
+
+@code {
+    public Book book { get; set; } = new Book();
+
+	private void NavigateToBookList()
+	{
+		navigationManager.NavigateTo("/book");
+	}
+}

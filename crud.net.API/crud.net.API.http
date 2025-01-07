@@ -5,7 +5,7 @@ GET {{crud.net.API_HostAddress}}/api/book
 Accept: application/json
 
 ### Get book by ID
-GET {{crud.net.API_HostAddress}}/api/book/1
+GET {{crud.net.API_HostAddress}}/api/book/36
 Accept: application/json
 
 ### Create a new book

@@ -1,4 +1,5 @@
-﻿@inject NavigationManager navigationManager;
+﻿@inject GenreService genreService;
+@inject NavigationManager navigationManager;
 
 <EditForm Model="@book">
     <DataAnnotationsValidator />
@@ -33,6 +34,24 @@
         <InputNumber id="PublicationYear" class="form-control" @bind-Value="book.PublicationYear" />
         <ValidationMessage For="(() => book.PublicationYear)" />
     </div>
+
+    <div class="mb-3">
+        <label class="form-label">Genres</label>
+        <div class="row g-2">
+            @foreach (var genre in genres)
+            {
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" checked="@selectedGenreIds.Contains(genre.Id)"
+                               @onchange="(e) => OnGenreSelectionChanged(genre.Id, (bool?)((ChangeEventArgs)e).Value ?? false)" />
+                        <label class="form-check-label">@genre.Name</label>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
     <div class="mb-3">
         <label for="Pages" class="form-label">Páginas</label>
         <InputNumber id="pages" class="form-control" @bind-Value="book.Pages" />
@@ -52,9 +71,28 @@
 
 @code {
     public Book book { get; set; } = new Book();
+    public List<Genre> genres { get; set; } = new List<Genre>();
+    public List<int> selectedGenreIds { get; set; } = new List<int>();
+
+    protected override async Task OnInitializedAsync()
+	{
+		genres = await genreService.GetGenres();
+	}
 
 	private void NavigateToBookList()
 	{
 		navigationManager.NavigateTo("/book");
 	}
+
+    private void OnGenreSelectionChanged(int genreId, bool isSelected)
+    {
+        if (isSelected)
+        {
+            if (!selectedGenreIds.Contains(genreId)) selectedGenreIds.Add(genreId);
+        }
+        else
+        {
+            if (selectedGenreIds.Contains(genreId)) selectedGenreIds.Remove(genreId);
+        }
+    }
 }

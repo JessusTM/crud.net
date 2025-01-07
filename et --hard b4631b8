@@ -1,0 +1,50 @@
+[33mc5c3c9e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Merge branch 'master' of https://github.com/JessusTM/crud.net
+[33mb4631b8[m feat(HTTP): agregar endpoints para gestión de géneros en archivo HTTP
+[33m4527fd1[m[33m ([m[1;31morigin/master[m[33m)[m feat(HTTP): agregar endpoints para gestión de géneros en archivo HTTP
+[33ma4dd1ea[m feat(API): configurar servicios y repositorios en Program.cs
+[33m820c688[m feat(Controller): implementar controlador de géneros
+[33macc876e[m feat(Service): implementar servicio de géneros
+[33m4c0b85d[m feat(Repository): implementar repositorio de géneros
+[33m2a871e3[m feat(Entities): agregar interfaz 'IGenreRepository'
+[33ma2dde9a[m feat(Component): agregar formulario de creación de libros con validación
+[33mc4a8b9d[m refactor(Entitie): inicializar propiedades de Book para evitar errores en AddForm
+[33mfa183e3[m feat(Pages): agregar página de listado de libros
+[33md278c3e[m feat(Component): agregar botón de navegación para formulario de agregar libro
+[33m576d849[m chore(Backend): actualizar appsettings.json y archivo de pruebas HTTP
+[33ma075029[m feat(Repository): incluir géneros y autores en la consulta de libros
+[33md938a19[m chore(Frontend): agregar crud.net.Client y archivo de configuración al archivo de solución
+[33mb581e9a[m chore(Frontend): agregar referencia al proyecto crud.net.Entities en crud.net.Client.csproj
+[33mb1faef6[m chore(Frontend): configurar BookService y HttpClient en Program.cs
+[33m34452d1[m chore(Frontend): actualizar 'NavMenu' para enlazar a la página de libros
+[33mdd55d75[m chore(Frontend): agregar espacios de nombres a '_Imports'
+[33mf183378[m feat(Service): agregar servicio de libros para obtener datos desde la API
+[33m8b2d3f2[m feat(Pages): agregar página de libros con componente 'BookList'
+[33mcdd3580[m feat(Components): agregar listado de libros con opciones de edición y eliminación
+[33mdd95c3a[m feat(API): configurar CORS para permitir la conexión del proyecto Blazor con la API
+[33mf298411[m feat(Frontend): agregar proyecto Blazor
+[33m907489a[m feat(Database): Añadir script SQL para eliminar todos los datos de las tablas en DeleteAll.sql
+[33m28bd286[m feat(HTTP): añadir endpoints para operaciones CRUD de libros en 'crud.net.API.http'
+[33ma61dc25[m feat(Program): configurar servicios y opciones de serialización en 'Program.cs'
+[33mc537f98[m feat(Database): agregar script SQL para insertar autores en la base de datos
+[33m1fbe40b[m refactor(Controller): mjorar mensajes de error y corregir método HTTP en 'BookController'
+[33m00dac32[m refactor(Services): Actualizar mensajes de excepción en 'BookService'
+[33mc5ea9be[m refactor(Repository): eliminar validaciones innecesarias en 'BookRepository'
+[33m669b05c[m feat(Database): actualizar modelos de dominio y migraciones para manejar listas opcionales en Genre y Author
+[33m1761aa4[m feat(Database): agregar paquete SQL con scripts de inserción de datos para las tablas
+[33m7f31462[m refactor: cambiar namespace y actualizar referencias del proyecto
+[33mbec47d7[m feat(Controller): agregar clase controller para manejar las solicitudes HTTP relacionadas con los libros
+[33mf71bd95[m feat(Services): agregar clase service para lógica de negocio de los libros
+[33m7187d03[m feat(Repository): implementar clase repository para manejar operaciones de datos
+[33mc222048[m feat(Entities): agregar interfaz 'IBookRepository'
+[33m92127ee[m refactor(Entities): mover entidades a un nuevo paquete de dominio
+[33m4575e98[m feat(Database): configurar 'DbContext' en Program.cs
+[33m4a020c6[m chore(Database): agregar cadena de conexión en 'appsettings.json'
+[33m08b2919[m feat(Database): configurar relaciones muchos a muchos en ApplicationDbContext
+[33me8a2fb9[m chore(API): eliminar archivos innecesarios
+[33md64b4b2[m feat(Entities): agregar asociaciones muchos a muchos en la clase 'Book'
+[33m0bbd7cb[m fix(Entities): corregir el namespace en la clase 'Author'
+[33me484ad9[m feat(Entities): agregar validaciones a la clase 'Genre'
+[33m8528a09[m feat(Entities): agregar validaciones a la clase 'Author'
+[33m7564c46[m feat(Entities): agregar validaciones a la clase 'Book'
+[33m8c00520[m Add project files.
+[33md6bd9ff[m Add .gitattributes and .gitignore.
